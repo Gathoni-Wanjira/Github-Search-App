@@ -1,59 +1,125 @@
+// Fetch the data from the Github API through access token.
 const accessToken = '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'
 const form = document.querySelector("form")
-form.addEventListener("submit" ,(e)=>{
+form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const user = e.target.username.value
+    const user = e.target.github_username.value
 
     fetch(`https://api.github.com/users/${user}`, {
-    method: "GET",
-    headers: {
+        method: "GET",
+        headers: {
+            Authorization: ` ${accessToken}`,
+            Accept: "application/vnd.github.v3+json"
+
+        }
+
+    })
+        .then(res => res.json())
+        .then(data => {
+            const details = data 
+            displayUsers(details)
+            
+        })
+})
+function displayUsers(details) {
+    // Create dynamic nodes
+    
+    const card_content = document.createElement("div")
+    const avatar = document.createElement("img")
+    const name = document.createElement("h1")
+    const following = document.createElement("p")
+    const followers = document.createElement("p")
+    const about = document.createElement("p")
+    const link_repo = document.createElement("a")
+
+    
+    // Assign values to the dynamic nodes  
+    
+    avatar.src = details.avatar_url
+    avatar.alt = `${details.login}`
+    name.textContent = details.login
+    following.textContent  = `Following : ${details.following}`
+    followers.textContent  = `Followers : ${details.followers}`
+    about.textContent = details.bio
+    link_repo.textContent = 'See Repositories'
+    link_repo.href = details.repos_url 
+
+    link_repo.addEventListener("click",fetch_repositories)
+    
+    // Append the nodes.
+    card_content.appendChild(avatar)
+    card_content.appendChild(name)
+    card_content.appendChild(followers)
+    card_content.appendChild(following)
+    card_content.appendChild(about)
+    card_content.appendChild(link_repo)
+
+    document.querySelector(".card").appendChild(card_content);
+
+}
+
+function fetch_repositories (e) {  
+    e.preventDefault()
+    const link = e.target.href
+    // console.log(link)
+    
+
+    fetch(link ,{
+        method: "GET",
+        headers:{
+
         Authorization: ` ${accessToken}`,
         Accept: "application/vnd.github.v3+json"
 
     }
-})
-    .then(function (res) {
-        return(res.json())
     })
-    .then(function (data) {
-       const details = data;
-       displayUsers(details);
-
-    })
-})
-
-function displayUsers (details){
-    
-    // Getting nodes from the html
-    const avatar = document.querySelector("#avatar")
-    avatar.innerHTML = ''
-    const name = document.querySelector("#name")
-    const about = document.querySelector("#about")
-    const linkRepo = document.querySelector("#link_repo")
-    // Looping data
-   console.log(details)
-    details.forEach((details) => {
-     // Creating elements dynamically
-
-        const p1 = document.createElement("p")
-         p1.textContent = details.name 
-       const p2 = document.createElement("p")
-         p2.textContent = details.about
-         const image = document.createElement("img")
-        image.src = details.avatar_url
-        const repolink = document.createElement("a")
-        repolink.textContent = "Repositories>>"
-         repolink.href = details.repos_url
-
-        //  append child element
-         avatar.appendChild(image)
-         name.appendChild(p1)
-       about.appendChild(p2)
-        linkRepo.appendChild(repolink)
- console.log(avator.appendChild(image))
-   });
-
+        .then(res => res.json())
+        .then(data => {
+            const repos = data 
+            displayRepos(repos) 
+        })
 }
 
+function displayRepos (repos) {
+    // const data = repos.items
+    for(const items of repos){
 
+ // dynamically create repos nodes
+
+ const repo_card = document.createElement("div")
+ const name_repo = document.createElement("h2")
+ const repo_description = document.createElement("p")
+ const repo_date = document.createElement("p")
+ const repo_launguage = document.createElement("h3")
+ const forks = document.createElement("button")
+
+//  const stars = document.createElement("button")
+
+  // Assign the nodes respective content
+
+    name_repo.textContent = items.name
+    repo_description.textContent = items.description
+    const unformatted_date =items.created_at 
+    const formatted_date = unformatted_date.slice(0 ,10)
+    repo_date.textContent = formatted_date
+    repo_launguage.textContent = items.launguages
+    forks.textContent = "Fork"
+    const fork_url = items.forks_url
+    forks.addEventListener('click', (e)=>
+    {
+        window.open(`https://github.com/${items.owner.login}/${items.name}/fork`, "_blank" )
+    })
+    
+    
+
+    // Append
+    repo_card.appendChild(name_repo)
+    repo_card.appendChild(repo_description)
+    repo_card.appendChild(repo_date)
+    repo_card.appendChild(repo_launguage)  
+    repo_card.appendChild(forks)  
+
+    document.querySelector(".repos_cardcontent").appendChild(repo_card)
+}
+}
 
