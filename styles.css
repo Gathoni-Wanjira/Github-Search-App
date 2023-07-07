@@ -45,6 +45,7 @@ img nav {
   margin: 22px;
   padding: 14px;
   border-radius: 16px;
+  font-weight: 600;
 }
 
 #searchName-results h4 {
@@ -74,16 +75,28 @@ ul img {
 #reposResults-card {
   background-color: #f9dcc4;
   margin: 25px;
-  height: 280px;
+  height: 60%;
   padding: 20px;
   border-radius: 20px;
   text-align: center;
+  width: 100%;
 }
 
 #reposResults-card h4 {
   text-decoration: underline;
+  margin-top: 5px;
 }
 
 #reposResults-card a {
   text-decoration: none;
+}
+
+#launguage {
+    background-color: #FFB5A7;
+    border-radius: 10px;
+    padding: 7px;
+}
+
+#last-update {
+    font-style: italic;
 }
