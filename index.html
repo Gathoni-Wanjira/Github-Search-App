@@ -1,78 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Github-search</title>
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Raleway&display=swap" rel="stylesheet">
-    <a href="https://icons8.com/icon/62856/github"></a> <a href="https://icons8.com"></a>
-    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <a href="https://icons8.com/icon/62856/github"></a>
+    <a href="https://icons8.com"></a>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <nav>
-        <img width="60" height="60" src="https://img.icons8.com/ios-glyphs/60/github.png" alt="github" />
-        <button id="user-btn">Search User</button>
-        <button id="repo-btn">Search Repositories</button>
-        <h3>GITHUB-SEARCH</h3>
+      <a href="#"
+        ><img
+          width="60"
+          height="60"
+          src="https://img.icons8.com/ios-glyphs/60/github.png"
+          alt="github"
+      /></a>
+      <button id="user-btn">Search User</button>
+      <button id="repo-btn">Search Repositories</button>
+      <h3>GITHUB-SEARCH</h3>
     </nav>
     <section id="search-results">
-        <section id="searchName-results">
-            <h4>Users Found</h4>
-            <ul>
-                <span><img src="images/favicon.png" alt="userImg">
-                    <li>UserName</li>
-                </span>
-                <span><img src="images/favicon.png" alt="userImg">
-                    <li>UserName</li>
-                </span>
-                <span><img src="images/favicon.png" alt="userImg">
-                    <li>UserName</li>
-                </span>
-                <span><img src="images/favicon.png" alt="userImg">
-                    <li>UserName</li>
-                </span>
-
-            </ul>
-
-        </section>
-        <section id="SearchRepo-results">
-
-            <div id="reposResults-card">
-                <h4 id="Repos-Title">RepoName</h4>
-                <p id="Repo-description"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem repudiandae
-                    quibusdam veniam ex, cupiditate dolores!</p>
-                <a href="#">See Repository</a>
-            </div>
-            <div id="reposResults-card">
-                <h4 id="Repos-Title">RepoName</h4>
-                <p id="Repo-description"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem repudiandae
-                    quibusdam veniam ex, cupiditate dolores!</p>
-                <a href="#">See Repository</a>
-            </div>
-            <div id="reposResults-card">
-                <h4 id="Repos-Title">RepoName</h4>
-                <p id="Repo-description"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem repudiandae
-                    quibusdam veniam ex, cupiditate dolores!</p>
-                <a href="#">See Repository</a>
-            </div>
-            <div id="reposResults-card">
-                <h4 id="Repos-Title">RepoName</h4>
-                <p id="Repo-description"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem repudiandae
-                    quibusdam veniam ex, cupiditate dolores!</p>
-                <a href="#">See Repository</a>
-            </div>
-
-
-        </section>
+      <section id="searchName-results">
+        <h4>Users Found</h4>
+        <ul>
+          <span
+            ><img src="images/favicon.png" alt="userImg" />
+            <li>UserName</li>
+          </span>
+          <span
+            ><img src="images/favicon.png" alt="userImg" />
+            <li>UserName</li>
+          </span>
+          <span
+            ><img src="images/favicon.png" alt="userImg" />
+            <li>UserName</li>
+          </span>
+          <span
+            ><img src="images/favicon.png" alt="userImg" />
+            <li>UserName</li>
+          </span>
+        </ul>
+      </section>
+      <section id="SearchRepo-results">
+        <div id="reposResults-card">
+          <h4 id="Repos-Title">RepoName</h4>
+          <p id="Repo-description">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem
+            repudiandae quibusdam veniam ex, cupiditate dolores!
+          </p>
+          <h5 id="launguage">Java</h5>
+          <p id="last-update">Updated <span>35</span> days ago</p>
+          <a href="#">Open Repository</a>
+        </div>
+        <div id="reposResults-card">
+          <h4 id="Repos-Title">RepoName</h4>
+          <p id="Repo-description">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem
+            repudiandae quibusdam veniam ex, cupiditate dolores!
+          </p>
+          <h5 id="launguage">Typescript</h5>
+          <p id="last-update">Updated <span>120</span>days ago</p>
+          <a href="#">Open Repository</a>
+        </div>
+        <div id="reposResults-card">
+          <h4 id="Repos-Title">RepoName</h4>
+          <p id="Repo-description">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem
+            repudiandae quibusdam veniam ex, cupiditate dolores!
+          </p>
+          <h5 id="launguage">Python</h5>
+          <p id="last-update">Updated <span>67</span> days ago</p>
+          <a href="#">Open Repository</a>
+        </div>
+        <div id="reposResults-card">
+          <h4 id="Repos-Title">RepoName</h4>
+          <p id="Repo-description">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem
+            repudiandae quibusdam veniam ex, cupiditate dolores!
+          </p>
+          <h5 id="launguage">Javascript</h5>
+          <p id="last-update">Updated <span>142</span> days ago</p>
+          <a href="#">Open Repository</a>
+        </div>
+      </section>
     </section>
-
-</body>
-<script src="./script.js"></script>
-
+  </body>
+  <script src="./script.js"></script>
 </html>
