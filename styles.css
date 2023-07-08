@@ -4,99 +4,51 @@ body {
   font-family: "PT Sans", sans-serif;
   font-family: "Raleway", sans-serif;
 }
-
 nav {
-  background-color: #f9dcc4;
+  background-color: #2a2e34;
   display: flex;
   padding: 10px;
+  border-bottom: 1px solid lightgray;
+  justify-content: space-between;
+  color: #fff;
+  align-items: center;
+  padding: 12px 28px;
+}
+#inputs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+#inputs a {
+  display: inline-block;
+  display: flex;
+}
+#inputs a img {
+  display: inline-block;
+  height: 32px;
+  margin-bottom: 0;
+}
+#inputs span {
+  display: inline-block;
+}
+nav #app-name {
+  display: inline-block;
 }
 
-button {
-  background-color: #f9dcc4;
-  border-style: none;
-  outline: none;
-  border: 0;
-  border-width: 0;
-  font-weight: 600;
-  font-size: 18px;
-}
-
-h3 nav {
-  font-size: 18px;
-}
-
-img nav {
-  margin-left: 80px;
-}
-
-#user-btn {
-  margin-right: 100px;
-  margin-left: 50px;
-}
-
-#repo-btn {
-  margin-right: 600px;
+#search-results-Container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100vh;
 }
 
 #searchName-results {
-  background-color: #f9dcc4;
-  width: 100%;
-  height: 100vh;
-  margin: 22px;
-  padding: 14px;
-  border-radius: 16px;
-  font-weight: 600;
+  /* width: 20%; */
+  flex: 0 0 20%;
+  border-right: 1px solid grey;
 }
-
-#searchName-results h4 {
-  /* text-align: center; */
-  text-decoration: underline;
-}
-
-ul img {
-  margin-right: 10px;
-}
-
-#searchName-results span {
-  display: flex;
-  list-style: none;
-  line-height: 32px;
-}
-
-#search-results {
-  display: flex;
-}
-
 #SearchRepo-results {
   display: flex;
-  padding: 40px;
-}
-
-#reposResults-card {
-  background-color: #f9dcc4;
-  margin: 25px;
-  height: 60%;
-  padding: 20px;
-  border-radius: 20px;
-  text-align: center;
-  width: 100%;
-}
-
-#reposResults-card h4 {
-  text-decoration: underline;
-  margin-top: 5px;
-}
-
-#reposResults-card a {
-  text-decoration: none;
-}
-
-#launguage {
-    background-color: #FFB5A7;
-    border-radius: 10px;
-    padding: 7px;
-}
-
-#last-update {
-    font-style: italic;
+  flex: 0 0 80%;
 }
