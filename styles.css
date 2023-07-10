@@ -93,5 +93,6 @@ margin: 0;
     padding: 14px;
     margin: 16px;
     background-color: #E9EAEC;
-    height: auto;
+    height: 40%;
+    border-radius: 12px;
 }
