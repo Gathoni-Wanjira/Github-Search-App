@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
@@ -9,89 +8,92 @@
     <link rel="stylesheet" href="./styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Raleway&display=swap" rel="stylesheet" />
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <nav>
-        <div id="inputs">
-            <a href="#">
-                <img src="https://img.icons8.com/ios-glyphs/github.png" alt="github" />
-            </a>
-            <span id="user-btn">Search User</span>
-            <span id="repo-btn">Search Repositories</span>
-        </div>
-        <span id="app-name">GITHUB SEARCH</span>
+      <div id="inputs">
+        <a href="#">
+          <img
+            src="https://img.icons8.com/ios-glyphs/github.png"
+            alt="github"
+          />
+        </a>
+        <span id="user-btn">SEARCH USER</span>
+        <!-- <span id="repo-btn">Search Repositories</span> -->
+      </div>
+      <span id="app-name">GITHUB SEARCH</span>
     </nav>
 
-<section id=" userInput">
-    <input type="search" placeholder="Enter Github Username" id="EnterUserName" class="name-visibility">
-    <input type="text" placeholder="Enter Repository Name" id="EnterRepoName" class="Repo-visibility" >
-
-</section>
-    <section id="search-results-Container" class="hideResults">
-
-        <section id="searchName-results">
-            <p id="users-title">Users Found</p>
-            <div id="user">
-                <img src="images/userImage.jpeg" alt="userImg" />
-                <p id="user-name">UserName</p>
-            </div>
-            <div id="user">
-                <img src="images/userImage.jpeg" alt="userImg" />
-                <p id="user-name">UserName</p>
-            </div>
-            <div id="user">
-                <img src="images/userImage.jpeg" alt="userImg" />
-                <p id="user-name">UserName</p>
-            </div>
-            <div id="user">
-                <img src="images/userImage.jpeg" alt="userImg" />
-                <p id="user-name">UserName</p>
-            </div>
-            <div id="user">
-                <img src="images/userImage.jpeg" alt="userImg" />
-                <p id="user-name">UserName</p>
-            </div>
-                
-            
-        </section>
-
-        <section id="SearchRepo-results" class="hideRepos">
-
-            <div id="reposResults-card">
-                <h4 id="Repos-Title">RepoName</h4>
-                <p id="Repo-description">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem
-                    repudiandae quibusdam veniam ex, cupiditate dolores!
-                </p>
-                <h5 id="launguage">Java</h5>
-                <p id="last-update">Updated <span>35</span> days ago</p>
-                <a href="#">Open Repository</a>
-            </div>
-            <div id="reposResults-card">
-                <h4 id="Repos-Title">RepoName</h4>
-                <p id="Repo-description">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem
-                    repudiandae quibusdam veniam ex, cupiditate dolores!
-                </p>
-                <h5 id="launguage">Typescript</h5>
-                <p id="last-update">Updated <span>120</span>days ago</p>
-                <a href="#">Open Repository</a>
-            </div>
-            <div id="reposResults-card">
-                <h4 id="Repos-Title">RepoName</h4>
-                <p id="Repo-description">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem
-                    repudiandae quibusdam veniam ex, cupiditate dolores!
-                </p>
-                <h5 id="launguage">Python</h5>
-                <p id="last-update">Updated <span>67</span> days ago</p>
-                <a href="#">Open Repository</a>
-            </div>
-        </section>
+    <section id="userInput">
+      <form id="user-name-form">
+        <input
+          type="text"
+          placeholder="Enter Github Username"
+          id="EnterUserName"
+          class="name-visibility"
+        />
+      </form>
+      <!-- <form id="repo-form">
+        <input type="text" placeholder="Enter Repository Name" id="EnterRepoName" class="Repo-visibility">
+    </form> -->
     </section>
-</body>
-<script src="./script.js"></script>
+    <section id="search-results-Container" class="hideResults">
+      <section id="searchName-results">
+        <p id="users-title">User Found</p>
+        <div id="user">
+          <img src="images/userImage.jpeg" alt="userImg" />
+          <p id="user-name">UserName</p>
+        </div>
+        <div>
+          <span><p id="user-bio">User-bio</p></span>
+        </div>
+        <div id="followers-count">
+          <span><a href="#" id="following">Following</a></span>
+          <span><a href="#" id="followers">Followers</a></span>
+        </div>
+        <div id="see-repo-btn">
+          <button id="repo-btn"><a href="#">See Repositories</a></button>
+        </div>
+      </section>
 
+      <section id="SearchRepo-results" class="hideRepos">
+        <div id="reposResults-card">
+          <h4 id="Repos-Title">RepoName</h4>
+          <p id="Repo-description">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem
+            repudiandae quibusdam veniam ex, cupiditate dolores!
+          </p>
+          <h5 id="launguage">Java</h5>
+          <p id="last-update">Updated <span>35</span> days ago</p>
+          <a href="#">Open Repository</a>
+        </div>
+        <div id="reposResults-card">
+          <h4 id="Repos-Title">RepoName</h4>
+          <p id="Repo-description">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem
+            repudiandae quibusdam veniam ex, cupiditate dolores!
+          </p>
+          <h5 id="launguage">Typescript</h5>
+          <p id="last-update">Updated <span>120</span>days ago</p>
+          <a href="#">Open Repository</a>
+        </div>
+        <div id="reposResults-card">
+          <h4 id="Repos-Title">RepoName</h4>
+          <p id="Repo-description">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem
+            repudiandae quibusdam veniam ex, cupiditate dolores!
+          </p>
+          <h5 id="launguage">Python</h5>
+          <p id="last-update">Updated <span>67</span> days ago</p>
+          <a href="#">Open Repository</a>
+        </div>
+      </section>
+    </section>
+  </body>
+  <script src="./script.js"></script>
 </html>
