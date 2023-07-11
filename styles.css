@@ -112,7 +112,7 @@ margin: 0;
 
 }
 
-#userNameInput {
+#EnterUserName {
     background-color: #2a2e34;
     color: #fff;
     padding: 12px;
@@ -123,4 +123,23 @@ margin: 0;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 45%;
+}
+.Repo-visibility {
+    display: none;
+}
+
+#EnterRepoName{
+    background-color: #2a2e34;
+    color: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    border: 0;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45%;
+
 }
