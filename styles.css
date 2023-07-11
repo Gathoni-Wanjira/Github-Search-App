@@ -96,3 +96,31 @@ margin: 0;
     height: 40%;
     border-radius: 12px;
 }
+.hideResults{
+
+    visibility: hidden;
+
+}
+
+.hideRepos{
+
+    visibility: hidden;
+
+}
+#userInput {
+    position: relative;
+
+}
+
+#userNameInput {
+    background-color: #2a2e34;
+    color: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    border: 0;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
