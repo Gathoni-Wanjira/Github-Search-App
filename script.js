@@ -25,22 +25,49 @@ formUsername.addEventListener("submit", (e) => {
 
 function fetchUsers (userInput) {
 
-    const userDetails = document.createElement("div")
+  const userDetails = document.querySelector("#searchName-results")
+   userDetails.innerText = ""
+
+// Create & Assign
+
+    const userImg = document.createElement("img")
+    userImg.id = "user-img"
+    userImg.src = userInput.avatar_url
+
+    const userName = document.createElement("p")
+    userName.id = "user-name"
+    userName.textContent = userInput.login
+    
+    const userBio = document.createElement("p")
+    userBio.id = "user-bio"
+    userBio.textContent = userInput.bio
+
+    const followersDiv = document.createElement("div")
+    followersDiv.id = "followers-count"
+    
+    
+    const followingNo = document.createElement("p") 
+    followingNo.id = "following"
+    followingNo.textContent = userInput.following
+
+    const followersNo = document.createElement("p")
+    followersNo.id = "followers"
+    followersNo.textContent = userInput.followers
+
+    followersDiv.appendChild(followingNo);
+    followersDiv.appendChild(followersNo);
+
+    const repoBtn = document.createElement("button")
 
 
-    const userImg = document.querySelector("#user-img");
-    const userName = document.querySelector("#user-name");
-    const userBio = document.querySelector("#user-bio");
-    const followingLink = document.querySelector("#following");
-    const followersLink = document.querySelector("#followers");
-    const repoBtn = document.querySelector("#repo-btn");
+    // Append
 
+    userDetails.appendChild(userImg);
+    userDetails.appendChild(userName);
+    userDetails.appendChild(userBio);
+    userDetails.appendChild(followersDiv);
+    userDetails.appendChild(repoBtn);
 
-    userImg.src = userInput.avatar_url;
-    userName.textContent = userInput.login;
-    userBio.textContent = userInput.bio;
-    followingLink.textContent = userInput.following_url
-    followersLink.textContent = userInput.followers_url  
     
 
 }
