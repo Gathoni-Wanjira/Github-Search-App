@@ -1,6 +1,6 @@
 const accessToken = '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'
 const formUsername = document.getElementById("user-name-form")
-// const formRepo = document.getElementById("repo-form")
+
 
 formUsername.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -69,6 +69,8 @@ userDetails.className = "user-card"
     const repoBtn = document.createElement("button")
     repoBtn.id = "repo-btn"
     repoBtn.textContent = "See Repositories"
+    repoBtn.href = userInput.repos_url
+    repoBtn.addEventListener("click" , fetchRepo)
 
 
     // Append
@@ -97,25 +99,27 @@ function showUserDetailsCard () {
 
 }
 
-// formRepo.addEventListener("submit", (e) => {
-//     e.preventDefault();
-//     const user = e.target.EnterRepoName.value
-    
 
-//     fetch(`https://api.github.com/users/${user}/repos`, {
-//         method: "GET",
-//         headers: {
-//             Authorization: ` ${accessToken}`,
-//             Accept: "application/vnd.github.v3+json"
-//         }
-//     })
-//         .then(response => response.json())
-//         .then(userRepository => {
-//             console.log(userRepository);
-//         })
-//         .catch(error => {
-//             console.error(error);
-//         });
-// })
 
-// https://api.github.com/users/Gathoni-Wanjira
+function fetchRepo (e) {
+    const link = e.target.href
+    console.log(link);
+    fetch(link, {
+        method: "GET",
+        headers: {
+            Authorization: ` ${accessToken}`,
+            Accept: "application/vnd.github.v3+json"
+        }
+    })
+        .then(response => response.json())
+        .then(userRepository => {
+            console.log(userRepository);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+
+}
+
+
+
