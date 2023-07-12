@@ -131,7 +131,7 @@ function showUserRepositories (userRepository) {
         // create
 
         const reposCard = document.createElement("div")
-        reposCard.id = "reposResults-card"
+        reposCard.className = "reposResults-card"
 
 
     const reposName = document.createElement("h4")
@@ -150,13 +150,15 @@ function showUserRepositories (userRepository) {
 
     const dateUpdated = document.createElement("span")
     dateUpdated.id = "last-update"
-    dateUpdated.textContent = repository.updated_at
+    dateUpdated.textContent = `Last Updated On ${repository.updated_at.slice(0,10)}`
 
 
     const openRepository = document.createElement("a")
     openRepository.id = "openRepo"
     openRepository.textContent = "Open Repository"
     openRepository.href = repository.html_url
+    openRepository.style.display = "block"
+    openRepository.style.marginTop = "10px"
 
 
 
