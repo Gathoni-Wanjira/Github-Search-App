@@ -103,7 +103,7 @@ function showUserDetailsCard () {
 
 function fetchRepo (e) {
     const link = e.target.href
-    console.log(link);
+    // console.log(link);
     fetch(link, {
         method: "GET",
         headers: {
@@ -114,7 +114,7 @@ function fetchRepo (e) {
         .then(response => response.json())
         .then(userRepository => {
             console.log(userRepository);
-            showUserRepositories();
+            showUserRepositories(userRepository);
         })
         .catch(error => {
             console.error(error);
@@ -122,10 +122,11 @@ function fetchRepo (e) {
 
 }
 
-function showUserRepositories (repository) {
-  
+function showUserRepositories (userRepository) {
+  const manyCards = document.querySelector("#SearchRepo-results");
+  manyCards.innerHTML = ""
 
-    userInput.forEach(repository => {
+    userRepository.forEach(repository => {
 
         // create
 
@@ -135,27 +136,48 @@ function showUserRepositories (repository) {
 
     const reposName = document.createElement("h4")
     reposName.id = "Repos-Title"
-    reposName.textContent = userInput
+    reposName.textContent = repository.name
 
     const reposDescription = document.createElement("p")
     reposDescription.id = "Repo-description"
+    reposDescription.textContent = repository.description
 
 
     const reposLaunguage = document.createElement("h5")
     reposLaunguage.id = "launguage"
+    reposLaunguage.textContent = repository.launguage
 
 
     const dateUpdated = document.createElement("span")
     dateUpdated.id = "last-update"
+    dateUpdated.textContent = repository.updated_at
 
 
     const openRepository = document.createElement("a")
     openRepository.id = "openRepo"
+    openRepository.textContent = "Open Repository"
+    openRepository.href = repository.html_url
 
+
+
+    reposCard.appendChild(reposName)
+    reposCard.appendChild(reposDescription)
+    reposCard.appendChild(reposLaunguage)
+    reposCard.appendChild(dateUpdated)
+    reposCard.appendChild(openRepository)
+
+
+manyCards.appendChild(reposCard);
 
 
         
     });
+    showRepositoriesOnClick();
+
+}
+
+function showRepositoriesOnClick () {
+    document.querySelector("#SearchRepo-results").classList.remove("hideRepos")
 
 }
 
