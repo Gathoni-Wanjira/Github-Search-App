@@ -16,7 +16,13 @@ formUsername.addEventListener("submit", (e) => {
         .then(response => response.json())
         .then(userInput => {
             console.log(userInput);
-            fetchUsers(userInput);
+            if (userInput.login !== undefined ){
+                fetchUsers(userInput);
+            } else {
+                alert("User Not Found!")
+            }
+            
+
         })
         .catch(error => {
             console.error(error);
@@ -25,10 +31,12 @@ formUsername.addEventListener("submit", (e) => {
 
 function fetchUsers (userInput) {
 
-  const userDetails = document.querySelector("#searchName-results")
-   userDetails.innerText = ""
+const userDetails = document.createElement("div")
+userDetails.className = "user-card"
+
 
 // Create & Assign
+
 
     const userImg = document.createElement("img")
     userImg.id = "user-img"
@@ -48,16 +56,19 @@ function fetchUsers (userInput) {
     
     const followingNo = document.createElement("p") 
     followingNo.id = "following"
-    followingNo.textContent = userInput.following
+    followingNo.textContent = `${userInput.following} Following` 
 
     const followersNo = document.createElement("p")
     followersNo.id = "followers"
-    followersNo.textContent = userInput.followers
+    followersNo.textContent = `${userInput.followers} Followers`
 
-    followersDiv.appendChild(followingNo);
+    
     followersDiv.appendChild(followersNo);
+    followersDiv.appendChild(followingNo);
 
     const repoBtn = document.createElement("button")
+    repoBtn.id = "repo-btn"
+    repoBtn.textContent = "See Repositories"
 
 
     // Append
@@ -69,6 +80,20 @@ function fetchUsers (userInput) {
     userDetails.appendChild(repoBtn);
 
     
+    const searchNameCard = document.querySelector("#searchName-results")
+    searchNameCard.innerHTML= ""
+    searchNameCard.appendChild(userDetails);
+
+
+    showUserDetailsCard ();
+
+}
+
+
+function showUserDetailsCard () {
+    document.querySelector("#search-results-Container").classList.remove("hideResults")
+    document.querySelector("#userInput").style.display = "none"
+
 
 }
 
