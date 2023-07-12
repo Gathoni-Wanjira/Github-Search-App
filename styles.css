@@ -45,7 +45,7 @@ nav #app-name {
   
 }
 
-#searchName-results {
+#searchName-results, .user-card {
   flex: 0 0 20%;
   border-right: 1px solid grey;
   padding: 0px 16px;
@@ -65,13 +65,13 @@ margin: 0;
     text-align: center;
 
 }
-#user {
+/* #user {
     
     flex-direction: column;
     padding: 4px 6px;
   
-}
-#user img {
+} */
+#user-img {
     display: inline-block;
     width: 140px;
     border-radius: 50%;
@@ -79,10 +79,11 @@ margin: 0;
     margin-left: 30px;
   
 }
-#user p {
+#user-name p {
     font-weight:bold;
     padding: 6px;
-    justify-content: center;
+    text-align: center;
+    
 
 }
 
