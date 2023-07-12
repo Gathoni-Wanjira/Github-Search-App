@@ -42,13 +42,14 @@ nav #app-name {
   position: relative;
   width: 100%;
   height: 100vh;
-  
 }
 
 #searchName-results, .user-card {
   flex: 0 0 20%;
-  border-right: 1px solid grey;
+  height: 100vh;
   padding: 0px 16px;
+  overflow-y: auto;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 
 }
 #SearchRepo-results {
@@ -63,28 +64,19 @@ margin: 0;
     font-size: 1em;
     padding: 16px 8px;
     text-align: center;
-
 }
-/* #user {
-    
-    flex-direction: column;
-    padding: 4px 6px;
-  
-} */
+
 #user-img {
     display: inline-block;
     width: 140px;
     border-radius: 50%;
     height: 140px;
-    margin-left: 30px;
-  
+    margin-left: 30px; 
 }
-#user-name p {
+p{
     font-weight:bold;
     padding: 6px;
-    text-align: center;
-    
-
+    font-size: large;
 }
 
 #reposResults-card {
@@ -112,7 +104,7 @@ margin: 0;
 
 #user-name-form {
 position: relative;
-/* visibility: hidden; */
+
 }
 
  #EnterUserName {
@@ -136,23 +128,20 @@ position: relative;
     display: flex;
     font-size: large;
     font-weight: 500;
+   
 }
 
-#following {
-    margin-right: 50px;
-}
 
 #user-bio {
     font-size:medium;
     font-weight: 200;
-    margin-left: 70px;
 }
 
 #repo-btn {
     margin: 32px;
     border: 1px solid #E9EAEC;
     text-decoration: none;
-    background-color: #E9EAEC;
+    background-color: #2a2e34;
     color: #fff;
     padding: 12px;
     border-radius: 4px;
