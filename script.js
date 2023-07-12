@@ -17,7 +17,7 @@ formUsername.addEventListener("submit", (e) => {
         .then(userInput => {
             console.log(userInput);
             if (userInput.login !== undefined ){
-                fetchUsers(userInput);
+                showUsers(userInput);
             } else {
                 alert("User Not Found!")
             }
@@ -29,7 +29,7 @@ formUsername.addEventListener("submit", (e) => {
         });
 })
 
-function fetchUsers (userInput) {
+function showUsers (userInput) {
 
 const userDetails = document.createElement("div")
 userDetails.className = "user-card"
@@ -114,6 +114,7 @@ function fetchRepo (e) {
         .then(response => response.json())
         .then(userRepository => {
             console.log(userRepository);
+            showUserRepositories();
         })
         .catch(error => {
             console.error(error);
@@ -121,5 +122,41 @@ function fetchRepo (e) {
 
 }
 
+function showUserRepositories (repository) {
+  
+
+    userInput.forEach(repository => {
+
+        // create
+
+        const reposCard = document.createElement("div")
+        reposCard.id = "reposResults-card"
+
+
+    const reposName = document.createElement("h4")
+    reposName.id = "Repos-Title"
+    reposName.textContent = userInput
+
+    const reposDescription = document.createElement("p")
+    reposDescription.id = "Repo-description"
+
+
+    const reposLaunguage = document.createElement("h5")
+    reposLaunguage.id = "launguage"
+
+
+    const dateUpdated = document.createElement("span")
+    dateUpdated.id = "last-update"
+
+
+    const openRepository = document.createElement("a")
+    openRepository.id = "openRepo"
+
+
+
+        
+    });
+
+}
 
 
