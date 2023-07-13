@@ -58,6 +58,9 @@ The following languages have been used on this project:
  - ERROR MESSAGE IF GITHUB USER IS NOT FOUND.
   <img src="./images//User%20Not%20Found.jpeg" alt=" Not Found screenshot" />
 
+   - ERROR MESSAGE IF USER REPOSITORY IS NOT FOUND.
+  <img src="./images/No%20Repositories.jpeg" alt=" No User Repositories screenshot" />
+
 
 
 ## KNOWN BUGS.
