@@ -114,7 +114,13 @@ function fetchRepo (e) {
         .then(response => response.json())
         .then(userRepository => {
             console.log(userRepository);
-            showUserRepositories(userRepository);
+            if (userRepository.length !== 0){
+                showUserRepositories(userRepository);
+               
+            }else {
+                alert("No Repositories Found.")
+            }
+            
         })
         .catch(error => {
             console.error(error);
