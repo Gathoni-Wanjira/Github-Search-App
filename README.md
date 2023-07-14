@@ -66,9 +66,9 @@ The following languages have been used on this project:
 ## KNOWN BUGS.
 --- 
 
-- So far so good there are no bugs related to this project😎.
+- So far so good there are no bugs related to this project.
 
-## SUPPORT & CONTACT DETAILS. 🙂 
+## SUPPORT & CONTACT DETAILS.  
 ---
 
 To make a contribution to the code used or any suggestions you can click on the contact link and email me your suggestions.
